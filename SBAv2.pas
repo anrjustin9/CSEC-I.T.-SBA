@@ -1,19 +1,18 @@
 Program SBA;
 Uses CRT;           //USES THE CRT LIBRARY
 Var
-   staff:array[1..25] of string;
-   totsales:array[1..25] of real;
-   com:array[1..25] of real;
+   staff:array[1..3] of string;
+   totsales:array[1..3] of real;
+   com:array[1..3] of real;
    no,S,A,i,B:integer;
    high:real;
    
 Const
-     N=25;  //DEFINES THE AMOUNT OF PEOPLE THROUGHT THE PROGRAM
+     N=3;  //DEFINES THE AMOUNT OF PEOPLE THROUGHT THE PROGRAM
 
 Procedure init;  //INITIALIZES THE PROGRAM
 Begin
      Writeln('Initialization Started');
-     table;
      For i:= 1 to N do
          Begin
               staff[i]:='';
@@ -33,13 +32,23 @@ Begin
          Writeln(staff[i],' $', totsales[i]:5:2);
          End;
 End;
+
+Procedure displayinfo;
+Begin
+     For i:= 1 to N do
+     Begin
+          Writeln('Name of Sales Staff Member: ', staff[i]);
+          Writeln('Total sales of member:$ ', totsales[i]:5:2);
+          Writeln('Commission for member:$ ', com[i]:5:2);
+          Writeln;
+     end;
+end;
 Procedure input; //INPUT DATA INTO THE ARRAYS
 Begin
      For i:= 1 to N do
          Begin
               textcolor(white);
               A:=1;
-              table;
               Clrscr;
               Writeln('-------------------------------------------------------');
               Writeln('This part of the program will help you input the data.');
@@ -48,7 +57,6 @@ Begin
               Readln(staff[i]);
               Writeln('Please Input Total Sales For ', staff[i],':');
               Readln(totsales[i]);
-                   table;
                    While totsales[i] < 0 do //VALIDATION FOR POSITIVE NUMBER
                    Begin
                         Writeln('Please re-enter total sales for ', staff[i],':');
@@ -67,7 +75,6 @@ Begin
 
                    end;
               com[i]:=(totsales[i] * 0.03);
-              table;
               Writeln('Commission for ', staff[i],' is $',com[i]:5:2);
               textcolor(green);
               Writeln('Press enter to continue...');
@@ -114,15 +121,16 @@ Begin
                end;
    until S = N + 1;             //REPEATS DYNAMICALLY TO ALLOW FOR FLEXIBILITY
    Writeln('Number of people without commission :',no);
+   Writeln('Press enter to continue...');
    readln();
 end;
 Begin
   {*Main Program*}
   init;
-  table;
   input;
   highcom;
   nocom;
+  displayinfo;
   textcolor(green);
   textbackground(white);
   Writeln('Success: Please Press Enter');
