@@ -25,13 +25,6 @@ Begin
      Readln();
      textbackground(black);
 End;
-Procedure DEBUG; //FOR DEBUGGING
-Begin
-     For i:= 1 to N do
-         Begin
-         Writeln(staff[i],' $', totsales[i]:5:2);
-         End;
-End;
 
 Procedure displayinfo;
 Begin
