@@ -26,7 +26,7 @@ Begin
      textbackground(black);
 End;
 
-Procedure displayinfo;
+Procedure displayinfo;     //DISPLAYS THE SALES INFORMATION FOR EACH MEMBER
 Begin
      For i:= 1 to N do
      Begin
