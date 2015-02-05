@@ -26,7 +26,7 @@ Begin
      textbackground(black);
 End;
 
-Procedure displayinfo;     //DISPLAYS THE SALES INFORMATION FOR EACH MEMBER
+Procedure displayinfo;	//DISPLAYS THE INFORMATION OF ALL THE STAFF MEMBERS
 Begin
      For i:= 1 to N do
      Begin
