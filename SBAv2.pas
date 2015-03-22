@@ -1,14 +1,26 @@
+{*
+Author:Justin Narine-Ramsepaul
+Title: Information Technology Problem Solving School Based Assessment
+Date of Completion: 2/28/2015
+School: St. Stephen's College
+Subject: Information Technology
+Year: June 2015
+Version: 2.0
+IDE:Dev-Pascal 1.9.2
+Compiler: Free Pascal 2.6.4
+*}
+
 Program SBA;
 Uses CRT;           //USES THE CRT LIBRARY
 Var
-   staff:array[1..3] of string;
-   totsales:array[1..3] of real;
-   com:array[1..3] of real;
+   staff:array[1..19] of string;
+   totsales:array[1..19] of real;
+   com:array[1..19] of real;
    no,S,A,i,B:integer;
    high:real;
    
 Const
-     N=3;  //DEFINES THE AMOUNT OF PEOPLE THROUGHT THE PROGRAM
+     N=19;  //DEFINES THE AMOUNT OF PEOPLE THROUGHT THE PROGRAM
 
 Procedure init;  //INITIALIZES THE PROGRAM
 Begin
@@ -42,7 +54,6 @@ Begin
          Begin
               textcolor(white);
               A:=1;
-              Clrscr;
               Writeln('-------------------------------------------------------');
               Writeln('This part of the program will help you input the data.');
               Writeln('It will also automatically calculate the commission.');
@@ -92,7 +103,7 @@ Begin
                 S:= S + 1;
            End;
 
-    until S = N ;               //REPEATS DYNAMICALLY TO ALLOW FOR FLEXABILITY
+    until S = N ;               //REPEATS DYNAMICALLY TO ALLOW FOR FLEXIBILITY
     Clrscr;
     Writeln('Highest commission is $',high:5:2 ,' by ',staff[B]);
     Writeln('Total Sales for ', staff[B] ,' is $',totsales[B]:5:2);
